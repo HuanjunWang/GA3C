@@ -6,7 +6,7 @@ import tensorflow as tf
 from Config import Config
 
 
-class NetworkVP:
+class QNetwork:
     def __init__(self, device, model_name, num_actions, observation_dim):
         self.device = device
         self.model_name = model_name
@@ -14,8 +14,6 @@ class NetworkVP:
         self.observation_dim = observation_dim
 
         self.learning_rate = Config.LEARNING_RATE_START
-        self.beta = Config.BETA_START
-        self.log_epsilon = Config.LOG_EPSILON
 
         self.graph = tf.Graph()
         with self.graph.as_default() as g:
@@ -71,7 +69,7 @@ class NetworkVP:
                             tf.reduce_sum(self.log_softmax_p * self.softmax_p, axis=1)
         else:
             self.softmax_p = (tf.nn.softmax(self.logits_p) + Config.MIN_POLICY) / (
-                        1.0 + Config.MIN_POLICY * self.num_actions)
+                1.0 + Config.MIN_POLICY * self.num_actions)
             self.selected_action_prob = tf.reduce_sum(self.softmax_p * self.action_index, axis=1)
 
             self.cost_p_1 = tf.log(tf.maximum(self.selected_action_prob, self.log_epsilon)) \
