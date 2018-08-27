@@ -30,7 +30,8 @@ class Config:
     # Game configuration
 
     # Name of the game, with version (e.g. PongDeterministic-v0)
-    ATARI_GAME = 'PongDeterministic-v0'
+    ENVS = ['CartPole-v1', 'MountainCar-v0', 'MountainCarContinuous-v0']
+    ENV_NAME = 'CartPole-v1'
 
     # Enable to see the trained agent in action
     PLAY_MODE = False

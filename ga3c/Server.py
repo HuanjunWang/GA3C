@@ -45,7 +45,7 @@ class Server:
         self.training_q = Queue(maxsize=Config.MAX_QUEUE_SIZE)
         self.prediction_q = Queue(maxsize=Config.MAX_QUEUE_SIZE)
 
-        self.model = NetworkVP(Config.DEVICE, Config.NETWORK_NAME, Environment().get_num_actions())
+        self.model = NetworkVP(Config.DEVICE, Config.NETWORK_NAME, Environment().get_num_actions(), Environment.get_observation_dim())
         if Config.LOAD_CHECKPOINT:
             self.stats.episode_count.value = self.model.load()
 
@@ -107,8 +107,7 @@ class Server:
             for trainer in self.trainers:
                 trainer.enabled = False
 
-        learning_rate_multiplier = (
-                                       Config.LEARNING_RATE_END - Config.LEARNING_RATE_START) / Config.ANNEALING_EPISODE_COUNT
+        learning_rate_multiplier = (Config.LEARNING_RATE_END - Config.LEARNING_RATE_START) / Config.ANNEALING_EPISODE_COUNT
         beta_multiplier = (Config.BETA_END - Config.BETA_START) / Config.ANNEALING_EPISODE_COUNT
 
         while self.stats.episode_count.value < Config.EPISODES:

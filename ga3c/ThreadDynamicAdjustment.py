@@ -74,7 +74,7 @@ class ThreadDynamicAdjustment(Thread):
 
     def random_walk(self):
         # 3 directions, 1 for Trainers, 1 for Predictors and 1 for Agents
-        # 3 outcome for each, -1: remove one, 0: no change, 2: remove one
+        # 3 outcome for each, -1: remove one, 0: no change, 2: add one
         direction = np.random.randint(3, size=3) - 1
         self.trainer_count = max(1, self.trainer_count - direction[0])
         self.predictor_count = max(1, self.predictor_count - direction[1])
