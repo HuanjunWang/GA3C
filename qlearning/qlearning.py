@@ -58,12 +58,21 @@ class QNetwork:
         self.ph_action = tf.placeholder(tf.int32, shape=[None], name="Action")
         self.global_step = tf.Variable(0, trainable=False, name='step')
 
-        with tf.name_scope("NN"):
-            self.input = tf.keras.Input(tensor=self.ph_observation)
-            self.l1 = tf.keras.layers.Dense(64, activation=tf.nn.relu)(self.input)
-            self.l2 = tf.keras.layers.Dense(64, activation=tf.nn.relu)(self.l1)
-            self.l3 = tf.keras.layers.Dense(64, activation=tf.nn.relu)(self.l2)
-            self.output = tf.keras.layers.Dense(self.num_actions, activation=None)(self.l3)
+        with tf.variable_scope("NN"):
+            self.l1 = tf.contrib.layers.fully_connected(inputs=self.ph_observation,
+                                                        num_outputs=128,
+                                                        activation_fn=tf.nn.relu)
+            self.l2 = tf.contrib.layers.fully_connected(inputs=self.l1,
+                                                        num_outputs=128,
+                                                        activation_fn=tf.nn.relu)
+            self.l3 = tf.contrib.layers.fully_connected(inputs=self.l2,
+                                                        num_outputs=128,
+                                                        activation_fn=tf.nn.relu)
+
+            self.output = tf.contrib.layers.fully_connected(inputs=self.l3,
+                                                            num_outputs=self.num_actions,
+                                                            activation_fn=None)
+
         self.max_output = tf.reduce_max(self.output, axis=1, name="MaxQValue")
         self.action = tf.argmax(self.output, axis=1, name="PredictAction")
 
@@ -73,7 +82,7 @@ class QNetwork:
             self.yy = tf.gather_nd(self.output, self.index)
             self.loss = tf.losses.mean_squared_error(self.ph_target, self.yy)
 
-        self.opt = tf.train.AdamOptimizer(learning_rate=1e-2)
+        self.opt = tf.train.GradientDescentOptimizer(learning_rate=1e-4)
         self.train_op = self.opt.minimize(self.loss, global_step=self.global_step)
 
     def _create_tensor_board(self):
@@ -134,8 +143,8 @@ def q_learning(env_name, iter, render, gamma=.98, seed=0):
                 break
         print("epoch_reward:", epoch_reward)
 
-    print("Average Reward: %d" % (total_reward/iter))
-    return (total_reward/iter)
+    print("Average Reward: %d" % (total_reward / iter))
+    return (total_reward / iter)
 
 
 if __name__ == '__main__':
