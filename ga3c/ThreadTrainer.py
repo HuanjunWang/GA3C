@@ -31,26 +31,37 @@ from Config import Config
 
 
 class ThreadTrainer(Thread):
-    def __init__(self, server, id):
+    def __init__(self, server, id, observation_dim):
         super(ThreadTrainer, self).__init__()
         self.setDaemon(True)
 
         self.id = id
         self.server = server
+        self.observation_dim = observation_dim
         self.exit_flag = False
 
     def run(self):
         while not self.exit_flag:
             batch_size = 0
+
+            state__ = []
+            action__ = []
+            next_state__ = []
+            reward__ = []
+            done__ = []
             while batch_size <= Config.TRAINING_MIN_BATCH_SIZE:
-                x_, r_, a_ = self.server.training_q.get()
-                if batch_size == 0:
-                    x__ = x_; r__ = r_; a__ = a_
-                else:
-                    x__ = np.concatenate((x__, x_))
-                    r__ = np.concatenate((r__, r_))
-                    a__ = np.concatenate((a__, a_))
-                batch_size += x_.shape[0]
+                batch_size += 1
+                state_, action_, next_state_, reward_, done_ = self.server.training_q.get()
+                state__.append(state_)
+                action__.append(action_)
+                next_state__.append(next_state_)
+                reward__.append(reward_)
+                done__.append(done_)
             
             if Config.TRAIN_MODELS:
-                self.server.train_model(x__, r__, a__, self.id)
+                self.server.train_model(state=np.array(state__),
+                                        action=np.array(action__),
+                                        next_state=np.array(next_state__),
+                                        reward=np.array(reward__),
+                                        done=np.array(done__),
+                                        id=self.id)

@@ -32,7 +32,6 @@ import time
 
 from Config import Config
 from Environment import Environment
-from Experience import Experience
 
 
 class ProcessAgent(Process):
@@ -53,70 +52,21 @@ class ProcessAgent(Process):
         self.wait_q = Queue(maxsize=1)
         self.exit_flag = Value('i', 0)
 
-    @staticmethod
-    def _accumulate_rewards(experiences, discount_factor, terminal_reward):
-        reward_sum = terminal_reward
-        for t in reversed(range(0, len(experiences)-1)):
-            r = np.clip(experiences[t].reward, Config.REWARD_MIN, Config.REWARD_MAX)
-            reward_sum = discount_factor * reward_sum + r
-            experiences[t].reward = reward_sum
-        return experiences[:-1]
-
-    def convert_data(self, experiences):
-        x_ = np.array([exp.state for exp in experiences])
-        a_ = np.eye(self.num_actions)[np.array([exp.action for exp in experiences])].astype(np.float32)
-        r_ = np.array([exp.reward for exp in experiences])
-        return x_, r_, a_
-
     def predict(self, state):
         # put the state in the prediction q
         self.prediction_q.put((self.id, state))
         # wait for the prediction to come back
-        p, v = self.wait_q.get()
-        return p, v
+        q_value = self.wait_q.get()
+        return q_value
 
-    def select_action(self, prediction):
-        if Config.PLAY_MODE:
-            action = np.argmax(prediction)
-        else:
-            action = np.random.choice(self.actions, p=prediction)
+    def select_action(self, prediction, policy="esp"):
+        if policy == 'esp':
+            if np.random.rand() > Config.ESP:
+                action = np.random.choice(self.actions)
+            else:
+                action = np.argmax(prediction)
+
         return action
-
-    def run_episode(self):
-        self.env.reset()
-        done = False
-        experiences = []
-
-        time_count = 0
-        reward_sum = 0.0
-
-        while not done:
-            # very first few frames
-            if self.env.current_state is None:
-                self.env.step(0)  # 0 == NOOP
-                continue
-
-            prediction, value = self.predict(self.env.current_state)
-            action = self.select_action(prediction)
-            reward, done = self.env.step(action)
-            reward_sum += reward
-            exp = Experience(self.env.previous_state, action, prediction, reward, done)
-            experiences.append(exp)
-
-            if done or time_count == Config.TIME_MAX:
-                terminal_reward = 0 if done else value
-
-                updated_exps = ProcessAgent._accumulate_rewards(experiences, self.discount_factor, terminal_reward)
-                x_, r_, a_ = self.convert_data(updated_exps)
-                yield x_, r_, a_, reward_sum
-
-                # reset the tmax count
-                time_count = 0
-                # keep the last experience for the next batch
-                experiences = [experiences[-1]]
-                reward_sum = 0.0
-
-            time_count += 1
 
     def run(self):
         # randomly sleep up to 1 second. helps agents boot smoothly.
@@ -124,10 +74,14 @@ class ProcessAgent(Process):
         np.random.seed(np.int32(time.time() % 1 * 1000 + self.id * 10))
 
         while self.exit_flag.value == 0:
-            total_reward = 0
-            total_length = 0
-            for x_, r_, a_, reward_sum in self.run_episode():
-                total_reward += reward_sum
-                total_length += len(r_) + 1  # +1 for last frame that we drop
-                self.training_q.put((x_, r_, a_))
-            self.episode_log_q.put((datetime.now(), total_reward, total_length))
+            self.env.reset()
+            while True:
+                q_value = self.predict(self.env.current_state)
+                action = self.select_action(q_value, policy="esp")
+                reward, done = self.env.step(action)
+                self.training_q.put((self.env.previous_state, action, self.env.current_state, reward, done))
+
+                if done:
+                    break
+
+            self.episode_log_q.put((datetime.now(), self.env.total_reward))

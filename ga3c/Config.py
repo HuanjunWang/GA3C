@@ -141,3 +141,9 @@ class Config:
     MIN_POLICY = 0.0
     # Use log_softmax() instead of log(softmax())
     USE_LOG_SOFTMAX = False
+
+
+    ESP = .1
+    ACTION_STEPS = 10000
+    SEED = 1
+    LOG_DIR = '/tmp/a3c/'

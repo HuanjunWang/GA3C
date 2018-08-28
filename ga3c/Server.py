@@ -29,28 +29,31 @@ from multiprocessing import Queue
 import time
 
 from Config import Config
-from Environment import Environment
-from NetworkVP import NetworkVP
 from ProcessAgent import ProcessAgent
-from ProcessStats import ProcessStats
 from ThreadDynamicAdjustment import ThreadDynamicAdjustment
 from ThreadPredictor import ThreadPredictor
 from ThreadTrainer import ThreadTrainer
+from QNetwork import QNetwork
+from Environment import Environment
 
 
 class Server:
     def __init__(self):
-        self.stats = ProcessStats()
-
         self.training_q = Queue(maxsize=Config.MAX_QUEUE_SIZE)
         self.prediction_q = Queue(maxsize=Config.MAX_QUEUE_SIZE)
+        self.env = Environment()
+        self.action_dim = self.env.get_num_actions()
+        self.observation_dim = self.env.get_observation_dim()
 
-        self.model = NetworkVP(Config.DEVICE, Config.NETWORK_NAME, Environment().get_num_actions(), Environment.get_observation_dim())
-        if Config.LOAD_CHECKPOINT:
-            self.stats.episode_count.value = self.model.load()
+        self.model = QNetwork(model_name="Name",
+                              num_actions=self.action_dim,
+                              observation_dim=self.observation_dim,
+                              gamma=Config.DISCOUNT,
+                              seed=Config.SEED,
+                              log_dir=Config.LOG_DIR)
 
         self.training_step = 0
-        self.frame_counter = 0
+        self.action_step = 0
 
         self.agents = []
         self.predictors = []
@@ -85,41 +88,27 @@ class Server:
         self.trainers[-1].join()
         self.trainers.pop()
 
-    def train_model(self, x_, r_, a_, trainer_id):
-        self.model.train(x_, r_, a_, trainer_id)
+    def train_model(self, state, action, next_state, reward, done, trainer_id):
+        self.model.train_batch(state=state,
+                               action=action,
+                               reward=reward,
+                               next_state=next_state,
+                               done=done)
         self.training_step += 1
-        self.frame_counter += x_.shape[0]
+        self.action_step += state.shape[0]
 
-        self.stats.training_count.value += 1
         self.dynamic_adjustment.temporal_training_count += 1
 
-        if Config.TENSORBOARD and self.stats.training_count.value % Config.TENSORBOARD_UPDATE_FREQUENCY == 0:
-            self.model.log(x_, r_, a_)
-
     def save_model(self):
-        self.model.save(self.stats.episode_count.value)
+        self.model.save(self.action_step)
 
     def main(self):
-        self.stats.start()
         self.dynamic_adjustment.start()
 
-        if Config.PLAY_MODE:
-            for trainer in self.trainers:
-                trainer.enabled = False
+        learning_rate_multiplier = (Config.LEARNING_RATE_END - Config.LEARNING_RATE_START) / Config.ACTION_STEPS
 
-        learning_rate_multiplier = (Config.LEARNING_RATE_END - Config.LEARNING_RATE_START) / Config.ANNEALING_EPISODE_COUNT
-        beta_multiplier = (Config.BETA_END - Config.BETA_START) / Config.ANNEALING_EPISODE_COUNT
-
-        while self.stats.episode_count.value < Config.EPISODES:
-            step = min(self.stats.episode_count.value, Config.ANNEALING_EPISODE_COUNT - 1)
-            self.model.learning_rate = Config.LEARNING_RATE_START + learning_rate_multiplier * step
-            self.model.beta = Config.BETA_START + beta_multiplier * step
-
-            # Saving is async - even if we start saving at a given episode, we may save the model at a later episode
-            if Config.SAVE_MODELS and self.stats.should_save_model.value > 0:
-                self.save_model()
-                self.stats.should_save_model.value = 0
-
+        while self.action_step < Config.ACTION_STEPS:
+            self.model.learning_rate = Config.LEARNING_RATE_START + learning_rate_multiplier * self.action_step
             time.sleep(0.01)
 
         self.dynamic_adjustment.exit_flag = True
@@ -129,3 +118,8 @@ class Server:
             self.remove_predictor()
         while self.trainers:
             self.remove_trainer()
+
+
+if __name__ == "__main__":
+    server = Server()
+    server.main()

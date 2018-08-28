@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d86b1595-c526-4f92-83db-b5ece59f56e3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ga3c/Experience.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ga3c/GA3C.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ga3c/GameManager.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ga3c/NetworkVP.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ga3c/ProcessStats.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/GA3C.iml" afterPath="$PROJECT_DIR$/.idea/GA3C.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qlearning/qlearning.py" afterPath="$PROJECT_DIR$/qlearning/qlearning.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ga3c/Config.py" afterPath="$PROJECT_DIR$/ga3c/Config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ga3c/Environment.py" afterPath="$PROJECT_DIR$/ga3c/Environment.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ga3c/ProcessAgent.py" afterPath="$PROJECT_DIR$/ga3c/ProcessAgent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ga3c/QNetwork.py" afterPath="$PROJECT_DIR$/ga3c/QNetwork.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ga3c/Server.py" afterPath="$PROJECT_DIR$/ga3c/Server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ga3c/ThreadPredictor.py" afterPath="$PROJECT_DIR$/ga3c/ThreadPredictor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ga3c/ThreadTrainer.py" afterPath="$PROJECT_DIR$/ga3c/ThreadTrainer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,55 +65,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="QNetwork.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="QNetwork.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ga3c/QNetwork.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="-1649">
+              <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="46" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qlearning.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qlearning/qlearning.py">
+      <file leaf-file-name="ProcessAgent.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ga3c/ProcessAgent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4462">
-              <caret line="194" column="15" lean-forward="false" selection-start-line="194" selection-start-column="15" selection-end-line="194" selection-end-column="15" />
+            <state relative-caret-position="216">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#1534#1563#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="Environment.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ga3c/Environment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="327">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="e#1535#1560#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LICENSE" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
+      <file leaf-file-name="Config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ga3c/Config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NetworkVP.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ga3c/NetworkVP.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="164" column="42" lean-forward="false" selection-start-line="164" selection-start-column="36" selection-end-line="164" selection-end-column="42" />
+            <state relative-caret-position="-1927">
+              <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -110,8 +114,40 @@
       <file leaf-file-name="Server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ga3c/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="49" column="56" lean-forward="false" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+            <state relative-caret-position="603">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding>
+                <element signature="e#1534#1567#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadDynamicAdjustment.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ga3c/ThreadDynamicAdjustment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-87">
+              <caret line="95" column="56" lean-forward="true" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadPredictor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ga3c/ThreadPredictor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="625">
+              <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadTrainer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ga3c/ThreadTrainer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="603">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,6 +166,8 @@
     <findStrings>
       <find>beta</find>
       <find>var_beta</find>
+      <find>cost_p_1_agg</find>
+      <find>cost_p</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,8 +176,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ga3c/QNetwork.py" />
         <option value="$PROJECT_DIR$/qlearning/qlearning.py" />
+        <option value="$PROJECT_DIR$/ga3c/Environment.py" />
+        <option value="$PROJECT_DIR$/ga3c/ThreadPredictor.py" />
+        <option value="$PROJECT_DIR$/ga3c/QNetwork.py" />
+        <option value="$PROJECT_DIR$/ga3c/ThreadTrainer.py" />
+        <option value="$PROJECT_DIR$/ga3c/Config.py" />
+        <option value="$PROJECT_DIR$/ga3c/ProcessAgent.py" />
+        <option value="$PROJECT_DIR$/ga3c/Server.py" />
       </list>
     </option>
   </component>
@@ -174,55 +218,6 @@
               <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
               <item name="GA3C" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="ga3c" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="ga3c" type="462c0819:PsiDirectoryNode" />
-              <item name="NetworkVP.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="ga3c" type="462c0819:PsiDirectoryNode" />
-              <item name="NetworkVP.py" type="8704e2dd:PyFileNode" />
-              <item name="NetworkVP" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="ga3c" type="462c0819:PsiDirectoryNode" />
-              <item name="Server.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="ga3c" type="462c0819:PsiDirectoryNode" />
-              <item name="Server.py" type="8704e2dd:PyFileNode" />
-              <item name="Server" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="qlearning" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="qlearning" type="462c0819:PsiDirectoryNode" />
-              <item name="qlearning.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="GA3C" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GA3C" type="462c0819:PsiDirectoryNode" />
-              <item name="qlearning" type="462c0819:PsiDirectoryNode" />
-              <item name="qlearning.py" type="8704e2dd:PyFileNode" />
-              <item name="QNetwork" type="dd8bbb05:PyElementNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -230,7 +225,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -376,17 +371,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1170" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25241676" sideWeight="0.49201596" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38722554" sideWeight="0.4489796" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29441118" sideWeight="0.48818475" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38722554" sideWeight="0.5510204" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41217566" sideWeight="0.34371644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29441118" sideWeight="0.4860365" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38722554" sideWeight="0.5510204" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40518963" sideWeight="0.49785176" order="9" side_tool="false" content_ui="tabs" x="-1953" y="346" width="1920" height="552" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47205588" sideWeight="0.48925886" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41217566" sideWeight="0.65628356" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24251497" sideWeight="0.6686359" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23952739" sideWeight="0.50798404" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -425,7 +419,7 @@
         <state relative-caret-position="69">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -477,7 +471,7 @@
         <state relative-caret-position="184">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -545,7 +539,7 @@
         <state relative-caret-position="69">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -560,76 +554,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ga3c/ThreadDynamicAdjustment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simple/Config.py" />
     <entry file="file://$PROJECT_DIR$/simple/Server.py" />
-    <entry file="file://$PROJECT_DIR$/ga3c/Experience.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ga3c/GameManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ga3c/ProcessAgent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2304">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ga3c/Config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="81" column="18" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ga3c/ProcessStats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="70" column="52" lean-forward="false" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ga3c/Environment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1128">
-          <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ga3c/GA3C.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/cs294/Lib/runpy.py" />
-    <entry file="file://$PROJECT_DIR$/ga3c/QNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -640,29 +567,125 @@
     <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/cs294/Lib/codecs.py" />
     <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/cs294/Lib/site-packages/tensorflow/python/client/session.py" />
     <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/cs294/Lib/site-packages/tensorflow/python/keras/backend.py" />
-    <entry file="file://$PROJECT_DIR$/ga3c/Server.py">
+    <entry file="file://$PROJECT_DIR$/ga3c/GameManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="49" column="56" lean-forward="false" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+        <state relative-caret-position="556">
+          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qlearning/qlearning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4462">
-          <caret line="194" column="15" lean-forward="false" selection-start-line="194" selection-start-column="15" selection-end-line="194" selection-end-column="15" />
+        <state relative-caret-position="292">
+          <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/ProcessStats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ga3c/NetworkVP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="164" column="42" lean-forward="false" selection-start-line="164" selection-start-column="36" selection-end-line="164" selection-end-column="42" />
+        <state relative-caret-position="631">
+          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/Experience.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/GA3C.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/ThreadDynamicAdjustment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="95" column="56" lean-forward="true" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/ThreadTrainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/ThreadPredictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="e#1534#1567#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/Config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1927">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/Environment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#1535#1560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/ProcessAgent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#1534#1563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ga3c/QNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1649">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

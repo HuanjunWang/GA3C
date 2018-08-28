@@ -24,36 +24,30 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import sys
-if sys.version_info >= (3,0):
-    from queue import Queue
-else:
-    from Queue import Queue
-
-import numpy as np
-import scipy.misc as misc
 
 from Config import Config
-from GameManager import GameManager
+import gym
 
 
 class Environment:
     def __init__(self):
-        self.game = GameManager(Config.ENV_NAME, display=Config.PLAY_MODE)
-        self.previous_state = None
-        self.current_state = None
+        self.env = gym.make(Config.ENV_NAME)
+        self.render = Config.PLAY_MODE
         self.total_reward = 0
+        self.current_state = None
+        self.previous_state = None
         self.reset()
 
     def get_num_actions(self):
-        return self.game.env.action_space.n
+        return self.env.action_space.n
 
     def get_observation_dim(self):
-        return self.game.env.observation_space.shape[0]
+        return self.env.observation_space.shape[0]
 
     def reset(self):
         self.total_reward = 0
-        self.previous_state = self.current_state = None
+        self.previous_state = None
+        self.current_state = self.env.reset()
 
     def step(self, action):
         self.previous_state = self.current_state
